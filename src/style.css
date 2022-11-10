@@ -1,0 +1,33 @@
+html, body {
+    height: 100%;
+    margin: 10px;
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+}
+button{
+    border: none;
+    background: none;
+}
+button:hover{
+    opacity: 65%;
+}
+#content{
+    display: grid;
+    grid-template-columns: 30vw 70vw;
+}
+#left{
+    grid-column: 1/2;
+    line-height: 2.5;
+    
+}
+#newProjectBtn{
+    position: relative;
+    top: -10px;
+    left: 10px;
+}
+#right{
+    grid-column: 2/3;
+}
+#newItemBtn{
+    font-size: larger;
+}
