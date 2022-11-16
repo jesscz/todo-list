@@ -1,6 +1,8 @@
+//adds the new item (to appear on the page and in a list)
+import { modalPopUpItem } from "./itemModalBox";
+
 const newToDo = (title, description, dueDate, priority, project, completion) => {
-    //get imput from user for above
-    alert("sadfdjsalk");
+    modalPopUpItem();
 }
 
 export { newToDo }

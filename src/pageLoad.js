@@ -1,14 +1,21 @@
+import { format } from 'date-fns';
+
 const pageLoad = () => {
     const element = document.createElement('div');
     element.id = 'content';
 
     const title = document.createElement('h1');
     title.innerText = 'Your To Do List';
-    title.id = 'title';
+    title.id = 'mainTitle';
 
 
     const left = document.createElement('div');
     left.id = 'left';
+
+    const date = document.createElement('div');
+    const dateToday = format(new Date(), 'E MMM do y');
+    date.id = 'mainDate';
+    date.append(dateToday);
 
     const all = document.createElement('div');
     all.innerText = 'All Tasks';
@@ -38,7 +45,7 @@ const pageLoad = () => {
     newItem.id = 'newItemBtn';
 
 
-    left.append(all, imp, today, week, proj, newProject);
+    left.append(date, all, imp, today, week, proj, newProject);
     right.append(newItem);
     element.append(title, left, right);
 

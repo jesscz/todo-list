@@ -1,7 +1,7 @@
 html, body {
     height: 100%;
-    margin: 10px;
-    padding: 10px;
+    margin: 0px;
+    padding: 0px;
     font-family: 'Arial', sans-serif;
 }
 button{
@@ -13,12 +13,21 @@ button:hover{
 }
 #content{
     display: grid;
-    grid-template-columns: 30vw 70vw;
+    grid-template-columns: 18vw 78vw;
+    margin: 10px;
+}
+#mainTitle{
+    grid-column: 1/3;
+    margin-bottom: 20px;
+    margin-top: 0px;
 }
 #left{
     grid-column: 1/2;
     line-height: 2.5;
     
+}
+#mainDate{
+    font-size: larger;
 }
 #newProjectBtn{
     position: relative;
@@ -27,7 +36,24 @@ button:hover{
 }
 #right{
     grid-column: 2/3;
+
 }
 #newItemBtn{
+    width: 100%;
     font-size: larger;
+    text-align: center;
+    background-color: rgb(221, 221, 221);
+    height: 2em;
+    margin-top: 8px;
+}
+#newItemModal{
+    display: none;
+    position: absolute;
+    margin: 10px;
+}
+input{
+    font-family: 'Arial', sans-serif;
+}
+#submitTask{
+    font-size: smaller;
 }
