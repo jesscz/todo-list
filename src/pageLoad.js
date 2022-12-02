@@ -1,4 +1,6 @@
 import { format } from 'date-fns';
+import { taskSort } from './taskSort';
+import { newToDo } from './newItem';
 
 const pageLoad = () => {
     const element = document.createElement('div');
@@ -8,6 +10,20 @@ const pageLoad = () => {
     title.innerText = 'Your To Do List';
     title.id = 'mainTitle';
 
+    const right = document.createElement('div');
+    right.id = 'right';
+
+    const newItem = document.createElement('button');
+    newItem.innerText = '+ Add Task';
+    newItem.id = 'newItemBtn';
+
+    const modal = document.createElement('div');
+    modal.id = 'modalAppend';
+
+    const list = document.createElement('div');
+    list.id = 'list';
+
+    right.append(newItem, modal, list);
 
     const left = document.createElement('div');
     left.id = 'left';
@@ -17,17 +33,30 @@ const pageLoad = () => {
     date.id = 'mainDate';
     date.append(dateToday);
 
-    const all = document.createElement('div');
+    const all = document.createElement('button');
     all.innerText = 'All Tasks';
+    all.setAttribute('class', 'taskSort');
+    all.setAttribute('id', 'allTasks');
+    all.addEventListener('click', () => taskSort('all'));
 
-    const imp = document.createElement('div');
+    let toDo = newToDo.getList();
+    const imp = document.createElement('button');
     imp.innerText = 'Important';
+    imp.setAttribute('class', 'taskSort');
+    imp.setAttribute('id', 'impTasks');
+    imp.addEventListener('click', () => taskSort('imp'));
 
-    const today = document.createElement('div');
+    const today = document.createElement('button');
     today.innerText = 'Today';
+    today.setAttribute('class', 'taskSort');
+    today.setAttribute('id', 'todayTasks');
+    today.addEventListener('click', () => taskSort('today'));
 
-    const week = document.createElement('div');
+    const week = document.createElement('button');
     week.innerText =  'This Week';
+    week.setAttribute('class', 'taskSort');
+    week.setAttribute('id', 'weekTasks');
+    week.addEventListener('click', () => taskSort('week'));
 
     const proj = document.createElement('div');
     proj.innerText = 'Projects';
@@ -37,19 +66,11 @@ const pageLoad = () => {
     newProject.id = 'newProjectBtn';
 
 
-    const right = document.createElement('div');
-    right.id = 'right';
-
-    const newItem = document.createElement('button');
-    newItem.innerText = '+ Add Task';
-    newItem.id = 'newItemBtn';
-
-
-    left.append(date, all, imp, today, week, proj, newProject);
-    right.append(newItem);
-    element.append(title, left, right);
+    left.append(all, imp, today, week, proj, newProject);
+    
+    element.append(title, date, left, right);
 
     return element;
-}
+};
 
 export { pageLoad }

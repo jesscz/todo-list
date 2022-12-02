@@ -1,3 +1,4 @@
+
 html, body {
     height: 100%;
     margin: 0px;
@@ -18,21 +19,32 @@ button:hover{
 }
 #mainTitle{
     grid-column: 1/3;
+    grid-row: 1/2;
     margin-bottom: 20px;
     margin-top: 0px;
 }
 #left{
     grid-column: 1/2;
     line-height: 2.5;
+    display: flex;
+    flex-direction: column;
     
 }
 #mainDate{
     font-size: larger;
+    grid-column-end: 3;
+    grid-row: 1/2;
+    justify-self: end;
+    align-self: center;
+}
+.taskSort{
+    text-align: left;
+    font-size: large;
 }
 #newProjectBtn{
     position: relative;
-    top: -10px;
     left: 10px;
+    text-align: left;
 }
 #right{
     grid-column: 2/3;
@@ -51,9 +63,48 @@ button:hover{
     position: absolute;
     margin: 10px;
 }
+.error{
+    color: red;
+    font-size: smaller;
+}
 input{
     font-family: 'Arial', sans-serif;
 }
 #submitTask{
     font-size: smaller;
 }
+.toDoItems{
+    display: grid;
+    grid-template-columns: 50px 3fr 50px 50px 50px;
+    grid-template-rows: 30px 50px 30px;
+    border: solid;
+    border-top: none;
+}
+.checkbox{
+    grid-row: 2/3;
+    margin: 15px;
+}
+.itemTitle{
+    grid-row: 1/2;
+    grid-column: 2/3;
+}
+.itemDescription{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    font-size: small;
+}
+.itemDueDate{
+    grid-row: 3/4;
+    grid-column: 3/6;
+    align-self: center;
+    font-size: smaller;
+    justify-self: center;
+}
+.itemProject{
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+.itemPriority{
+    grid-column: 5/6;
+}
+

@@ -9,7 +9,6 @@ const modalPopUpItem = () =>{
     modalContent.class = 'modalContent';
     modalContent.innerText = 'New To Do Item:';
     
-
     const form = document.createElement('form');
     form.name = 'myForm';
 
@@ -20,6 +19,7 @@ const modalPopUpItem = () =>{
     title.setAttribute('type', 'text');
     title.setAttribute('name', 'inputTitle');
     title.setAttribute('id', 'inputTitle');
+    titleLabel.appendChild(title);
 
     const descriptionLabel = document.createElement('label');
     descriptionLabel.innerText = 'Description:';
@@ -28,6 +28,7 @@ const modalPopUpItem = () =>{
     description.type = 'text';
     description.name = 'inputDescription';
     description.id = 'inputDescription';
+    descriptionLabel.appendChild(description);
 
     const dueDateLabel = document.createElement('label');
     dueDateLabel.innerText = 'Due Date:'
@@ -37,6 +38,7 @@ const modalPopUpItem = () =>{
     dueDate.min = format(new Date(), 'yyyy-MM-dd');
     dueDate.name = 'inputDueDate';
     dueDate.id = 'inputDueDate';
+    dueDateLabel.appendChild(dueDate);
 
     const projectLabel = document.createElement('label');
     projectLabel.innerText = 'Project:'
@@ -45,16 +47,30 @@ const modalPopUpItem = () =>{
     project.name = 'inputProject';
     project.id = 'inputProject';
     const projectOption = document.createElement('option');
-    projectOption.innerText = 'None';
+    projectOption.innerText = 'Default';
     project.appendChild(projectOption);
+    projectLabel.appendChild(project);
+
+    const priorityLabel = document.createElement('label');
+    priorityLabel.innerText = 'Important:';
+    priorityLabel.for = 'inputPriority';
+    const priority = document.createElement('select');
+    priority.name = 'inputPriority';
+    priority.id = 'inputPriority';
+    const priorityNo = document.createElement('option');
+    priorityNo.innerText = 'No';
+    const priorityYes = document.createElement('option');
+    priorityYes.innerText = 'Yes';
+    priority.append(priorityNo,priorityYes);
+    priorityLabel.appendChild(priority);
 
     const submit = document.createElement('button');
     submit.innerText = 'Submit';
-    submit.type = 'submit';
+    submit.type = 'button';
     submit.id = 'submitTask';
 
-    form.append(titleLabel, title, descriptionLabel, description, 
-        dueDateLabel, dueDate, projectLabel, project, submit);
+    form.append(titleLabel, descriptionLabel, dueDateLabel, 
+        projectLabel, priorityLabel, submit);
 
 
     
