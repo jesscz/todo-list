@@ -1,10 +1,11 @@
 //adds the new item (to appear on the page and in a list)
-// import { modalPopUpItem } from "./itemModalBox";
+// import { modalPopUpItem } from './itemModalBox';
 // import { toDoList } from './index.js'
 
 import { format } from 'date-fns';
 import { itemFactory } from './itemFactory';
 import { starClick } from './starClick';
+import { deleteItem } from './deleteItem';
 
 const newToDo = (() => {
     
@@ -33,17 +34,16 @@ const newToDo = (() => {
     }
     
     function updatePage(obj, i){
-        let list = document.getElementById('list');
         const itemContainer = document.createElement('div');
         itemContainer.setAttribute('class', 'toDoItems');
-        const completionContainer = document.createElement("input");
+        const completionContainer = document.createElement('input');
         completionContainer.type = 'checkbox';
         completionContainer.setAttribute('class', 'checkbox');
         const titleContainer = document.createElement('p');
         titleContainer.setAttribute('class', 'itemTitle');
         const descriptionContainer = document.createElement('p');
         descriptionContainer.setAttribute('class', 'itemDescription');
-        const dueDateContainer = document.createElement("p");
+        const dueDateContainer = document.createElement('p');
         dueDateContainer.setAttribute('class', 'itemDueDate');
         if (obj[i][`newDueDate`] != ''){
             let year = obj[i][`newDueDate`].slice(0,4);
@@ -54,23 +54,27 @@ const newToDo = (() => {
                 'E MMM do y');
             dueDateContainer.append(dueDate);
         }
-        const projectContainer = document.createElement("p");
+        const projectContainer = document.createElement('p');
         projectContainer.setAttribute('class', 'itemProject');
         const priorityContainer = document.createElement('input');
         priorityContainer.type = 'image';
         priorityContainer.setAttribute('class', 'itemPriority');
         starClick(priorityContainer, obj, i);
+        const deleteBtn = document.createElement('button');
+        deleteBtn.setAttribute('class', 'itemDelete');
+        deleteBtn.innerText = 'Delete';
+        deleteBtn.addEventListener('click', () => deleteItem(i));
         completionContainer.append(obj[i][`newCompletion`]);
         titleContainer.append(obj[i][`newTitle`]);
         descriptionContainer.append(obj[i][`newDescription`]);
-        
         if (obj[i][`newProject`] != 'Default'){
             projectContainer.append(obj[i][`newProject`]);
         }
         priorityContainer.append(toDoList[i][`newPriority`]);
         itemContainer.append(completionContainer, titleContainer, descriptionContainer, dueDateContainer,
-            projectContainer, priorityContainer);
-        list.append(itemContainer); 
+            projectContainer, priorityContainer, deleteBtn);
+        console.log(toDoList);
+        return itemContainer; 
         
     };
     

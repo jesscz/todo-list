@@ -2,6 +2,7 @@ import './style.css';
 import { validateForm } from './formValidation'
 import { pageLoad } from './pageLoad'
 import { modalPopUpItem } from './itemModalBox';
+import { deleteItem } from './deleteItem';
 // import { newToDo } from './newItem';
 
 (function component() {
@@ -14,23 +15,27 @@ import { modalPopUpItem } from './itemModalBox';
   
   const newItem = document.getElementById('newItemBtn');
   const modal = document.getElementById('newItemModal');
-  newItem.addEventListener('click', function(){
-    if (window.getComputedStyle(modal).getPropertyValue("display") === "none"){
+  newItem.addEventListener('click', () => {
+    if (window.getComputedStyle(modal).getPropertyValue('display') === 'none'){
       modal.style.display = 'block';
     }
   });
 
   const submit = document.getElementById('submitTask');
-  submit.addEventListener('click', function(){
-    // modal.style.display = "none";
+  submit.addEventListener('click', () => {
+    // modal.style.display = 'none';
     validateForm();
   });
   
   const close = document.getElementById('itemCloseBtn');
-  close.addEventListener('click', function(){
-    modal.style.display = "none";
+  close.addEventListener('click', () => {
+    modal.style.display = 'none';
   });
 
+  // const deleteBtn = document.querySelector('.itemDelete');
+  // deleteBtn.addEventListener('click', () => deleteItem());
+
+  const proj = document.getElementById('newProjectBtn');
   
 })();
 

@@ -6,6 +6,7 @@ const pageLoad = () => {
     const element = document.createElement('div');
     element.id = 'content';
 
+
     const title = document.createElement('h1');
     title.innerText = 'Your To Do List';
     title.id = 'mainTitle';
@@ -25,6 +26,7 @@ const pageLoad = () => {
 
     right.append(newItem, modal, list);
 
+
     const left = document.createElement('div');
     left.id = 'left';
 
@@ -36,26 +38,25 @@ const pageLoad = () => {
     const all = document.createElement('button');
     all.innerText = 'All Tasks';
     all.setAttribute('class', 'taskSort');
-    all.setAttribute('id', 'allTasks');
+    // all.setAttribute('id', 'allTasks');
     all.addEventListener('click', () => taskSort('all'));
 
-    let toDo = newToDo.getList();
     const imp = document.createElement('button');
     imp.innerText = 'Important';
     imp.setAttribute('class', 'taskSort');
-    imp.setAttribute('id', 'impTasks');
+    // imp.setAttribute('id', 'impTasks');
     imp.addEventListener('click', () => taskSort('imp'));
 
     const today = document.createElement('button');
     today.innerText = 'Today';
     today.setAttribute('class', 'taskSort');
-    today.setAttribute('id', 'todayTasks');
+    // today.setAttribute('id', 'todayTasks');
     today.addEventListener('click', () => taskSort('today'));
 
     const week = document.createElement('button');
     week.innerText =  'This Week';
     week.setAttribute('class', 'taskSort');
-    week.setAttribute('id', 'weekTasks');
+    // week.setAttribute('id', 'weekTasks');
     week.addEventListener('click', () => taskSort('week'));
 
     const proj = document.createElement('div');
@@ -65,9 +66,9 @@ const pageLoad = () => {
     newProject.innerText = '+ New Project';
     newProject.id = 'newProjectBtn';
 
-
     left.append(all, imp, today, week, proj, newProject);
     
+
     element.append(title, date, left, right);
 
     return element;

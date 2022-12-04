@@ -1,30 +1,32 @@
 import { format } from 'date-fns';
 import { differenceInCalendarDays } from 'date-fns'
-import { newToDo } from './newItem.js'
+import { newToDo } from "./newItem";
 
-const taskSort = (x) => {
-    const list = document.getElementById('list');
+const deleteItem = (i) => {
     let toDo = newToDo.getList();
-    if (list.innerHTML != null){
-        list.innerHTML = '';
-    }
-    if (x == 'all'){
+    const list = document.getElementById('list');
+    toDo.splice(i, 1);
+    console.log(toDo);
+    // console.log("index" + i);
+    
+    // let len = list.childNodes.length;
+    // console.log('length of childnodes under list:' + len);
+    // console.log(list.children[i]);
+    // console.log(list.classList.value);
+    list.innerHTML = '';
+    if (list.classList.value == ''){
         for(let i=0; (i<toDo.length); i++){
             list.append(newToDo.updatePage(toDo, i));
         }
     }
-    else if (x == 'imp'){
-        list.className = '';
-        list.classList.add('imp');
+    else if (list.classList.value == 'imp'){
         for(let i=0; (i<toDo.length); i++){
             if (toDo[i][`newPriority`] == 'Yes'){
                 list.append(newToDo.updatePage(toDo, i));
             }
         }
     }
-    else if (x == 'today'){
-        list.className = '';
-        list.classList.add('today');
+    else if (list.classList.value == 'today'){
         let date = format(
             new Date(),
             'y-MM-dd');
@@ -34,9 +36,7 @@ const taskSort = (x) => {
             }
         }
     }
-    else if (x == 'week'){
-        list.className = '';
-        list.classList.add('week');
+    else if (list.classList.value == 'week'){
         for(let i=0; (i<toDo.length); i++){
             let difference = differenceInCalendarDays(
                 new Date(toDo[i][`newDueDate`]),
@@ -48,7 +48,9 @@ const taskSort = (x) => {
             }
         }
     }
-    
+//    let n = i-1;
+    // list.removeChild(list.children[i]);
+    // toDo = newToDo.getList();
 }
 
-export { taskSort }
+export { deleteItem }

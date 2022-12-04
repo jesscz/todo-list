@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 
-const modalPopUpItem = () =>{
+const modalPopUpItem = () => {
     const modal = document.createElement('div');
     modal.class = 'modal';
     modal.id = 'newItemModal';

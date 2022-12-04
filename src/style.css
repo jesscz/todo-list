@@ -75,14 +75,13 @@ input{
 }
 .toDoItems{
     display: grid;
-    grid-template-columns: 50px 3fr 50px 50px 50px;
-    grid-template-rows: 30px 50px 30px;
+    grid-template-columns: 50px 2fr 120px 50px;
+    grid-template-rows: 30px 30px 30px;
     border: solid;
     border-top: none;
 }
 .checkbox{
     grid-row: 2/3;
-    margin: 15px;
 }
 .itemTitle{
     grid-row: 1/2;
@@ -95,7 +94,7 @@ input{
 }
 .itemDueDate{
     grid-row: 3/4;
-    grid-column: 3/6;
+    grid-column: 3/4;
     align-self: center;
     font-size: smaller;
     justify-self: center;
@@ -105,6 +104,15 @@ input{
     grid-column: 2/3;
 }
 .itemPriority{
-    grid-column: 5/6;
+    grid-column: 4/5;
+}
+.itemDelete{
+    grid-row: 3/4;
+    grid-column: 4/5;
+    margin: 5px;
+    background-color: rgb(220, 0, 0);
+    color: white;
+    border-radius: 10%;
+    font-size: 10px;
 }
 
