@@ -5,6 +5,7 @@
 import { format } from 'date-fns';
 import { itemFactory } from './itemFactory';
 import { starClick } from './starClick';
+import { taskComplete } from './completion';
 import { deleteItem } from './deleteItem';
 
 const newToDo = (() => {
@@ -39,6 +40,7 @@ const newToDo = (() => {
         const completionContainer = document.createElement('input');
         completionContainer.type = 'checkbox';
         completionContainer.setAttribute('class', 'checkbox');
+        completionContainer.addEventListener('click', () => taskComplete(completionContainer, obj, i)); 
         const titleContainer = document.createElement('p');
         titleContainer.setAttribute('class', 'itemTitle');
         const descriptionContainer = document.createElement('p');
