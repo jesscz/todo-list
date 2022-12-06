@@ -1,5 +1,5 @@
-import emptyStar from './emptyStar.svg';
-import filledStar from './filledStar.svg';
+import emptyStar from '../pictures/emptyStar.svg';
+import filledStar from '../pictures/filledStar.svg';
 
 const starClick = (star, toDoList, i) => {
     if (toDoList[i]['newPriority'] == 'No'){

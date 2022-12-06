@@ -8,4 +8,4 @@ const itemFactory = (title, description, dueDate, project, priority) => {
     return {newTitle, newDescription, newDueDate, newPriority, newProject, newCompletion}
 };
 
-export {itemFactory}
+export { itemFactory }

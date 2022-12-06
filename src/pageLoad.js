@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
-import { taskSort } from './taskSort';
-import { newToDo } from './newItem';
+import { taskSort } from './toDos/taskSort';
+import { newToDo } from './toDos/newItem';
 
 const pageLoad = () => {
     const element = document.createElement('div');

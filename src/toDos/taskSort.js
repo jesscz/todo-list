@@ -9,6 +9,7 @@ const taskSort = (x) => {
         list.innerHTML = '';
     }
     if (x == 'all'){
+        list.className = '';
         for(let i=0; (i<toDo.length); i++){
             list.append(newToDo.updatePage(toDo, i));
         }

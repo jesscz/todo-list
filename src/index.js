@@ -1,9 +1,7 @@
 import './style.css';
 import { validateForm } from './formValidation'
 import { pageLoad } from './pageLoad'
-import { modalPopUpItem } from './itemModalBox';
-import { deleteItem } from './deleteItem';
-// import { newToDo } from './newItem';
+import { itemModal } from './toDos/itemModalBox';
 
 (function component() {
   const element = document.createElement('div');
@@ -11,7 +9,7 @@ import { deleteItem } from './deleteItem';
   document.body.appendChild(element);
 
   const modalAppend = document.getElementById('modalAppend');
-  modalAppend.appendChild(modalPopUpItem());
+  modalAppend.appendChild(itemModal());
   
   const newItem = document.getElementById('newItemBtn');
   const modal = document.getElementById('newItemModal');
@@ -31,9 +29,6 @@ import { deleteItem } from './deleteItem';
   close.addEventListener('click', () => {
     modal.style.display = 'none';
   });
-
-  // const deleteBtn = document.querySelector('.itemDelete');
-  // deleteBtn.addEventListener('click', () => deleteItem());
 
   const proj = document.getElementById('newProjectBtn');
   

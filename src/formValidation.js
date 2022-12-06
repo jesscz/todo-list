@@ -1,4 +1,4 @@
-import { newToDo } from "./newItem";
+import { newToDo } from "./toDos/newItem";
 
 const validateForm = () =>{
     const element = document.createElement('div');

@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 
-const modalPopUpItem = () => {
+const itemModal = () => {
     const modal = document.createElement('div');
     modal.class = 'modal';
     modal.id = 'newItemModal';
@@ -84,4 +84,4 @@ const modalPopUpItem = () => {
     return modal;
 }
 
-export { modalPopUpItem }
+export { itemModal }
