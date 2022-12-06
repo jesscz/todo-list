@@ -18,13 +18,13 @@ const pageLoad = () => {
     newItem.innerText = '+ Add Task';
     newItem.id = 'newItemBtn';
 
-    const modal = document.createElement('div');
-    modal.id = 'modalAppend';
+    const itemContainer = document.createElement('div');
+    itemContainer.id = 'itemContainer';
 
     const list = document.createElement('div');
     list.id = 'list';
 
-    right.append(newItem, modal, list);
+    right.append(newItem, itemContainer, list);
 
 
     const left = document.createElement('div');
@@ -66,7 +66,11 @@ const pageLoad = () => {
     newProject.innerText = '+ New Project';
     newProject.id = 'newProjectBtn';
 
-    left.append(all, imp, today, week, proj, newProject);
+    const projectContainer = document.createElement('div');
+    projectContainer.id = 'projectContainer';
+
+    left.append(all, imp, today, week, proj, 
+        newProject, projectContainer);
     
 
     element.append(title, date, left, right);

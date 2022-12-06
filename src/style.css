@@ -46,6 +46,10 @@ button:hover{
     left: 10px;
     text-align: left;
 }
+#newProjectModal{
+    display: none;
+}
+
 #right{
     grid-column: 2/3;
 

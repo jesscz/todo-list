@@ -44,7 +44,7 @@ const taskSort = (x) => {
                 new Date()
               )
             console.log (difference);
-            if (difference < 7){
+            if ((typeof(difference) == 'number') && (difference < 7)) {
                 list.append(newToDo.updatePage(toDo, i));
             }
         }
