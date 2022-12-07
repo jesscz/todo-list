@@ -47,7 +47,7 @@ import { newProject } from './projects/newProject';
 
   const projSubmit = document.getElementById('submitProject');
   projSubmit.addEventListener('click', () => {
-    newProject();
+    newProject.addProject();
   });
   
   const projClose = document.getElementById('projectCloseBtn');
