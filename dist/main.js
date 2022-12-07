@@ -526,7 +526,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"taskComplete\": () => (/* binding */ taskComplete)\n/* harmony export */ });\n\nconst taskComplete = (checkbox, toDoList, i) => {\n    if (checkbox.checked === true){\n        toDoList[i][`newCompletion`] = true;\n        console.log(toDoList);\n    }\n    else if (checkbox.checked === false){\n        toDoList[i][`newCompletion`] = false;\n        console.log(toDoList)\n    }\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/toDos/completion.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"taskComplete\": () => (/* binding */ taskComplete)\n/* harmony export */ });\n\nconst taskComplete = (checkbox, toDoList, i) => {\n    let title = document.getElementsByClassName('itemTitle');\n    let thisTitle = title[i];\n    if (checkbox.checked === true){\n        toDoList[i][`newCompletion`] = true;\n        thisTitle.style.textDecoration = 'line-through';\n    }\n    else if (checkbox.checked === false){\n        toDoList[i][`newCompletion`] = false;\n        thisTitle.style.textDecoration = 'none';\n    }\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/toDos/completion.js?");
 
 /***/ }),
 

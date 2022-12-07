@@ -1,12 +1,14 @@
 
 const taskComplete = (checkbox, toDoList, i) => {
+    let title = document.getElementsByClassName('itemTitle');
+    let thisTitle = title[i];
     if (checkbox.checked === true){
         toDoList[i][`newCompletion`] = true;
-        console.log(toDoList);
+        thisTitle.style.textDecoration = 'line-through';
     }
     else if (checkbox.checked === false){
         toDoList[i][`newCompletion`] = false;
-        console.log(toDoList)
+        thisTitle.style.textDecoration = 'none';
     }
 }
 
