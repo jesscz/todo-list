@@ -2,7 +2,8 @@ import './style.css';
 import { validateForm } from './formValidation'
 import { pageLoad } from './pageLoad'
 import { itemModal } from './toDos/itemModalBox';
-import { projectModal } from './projects/projectModalBox'
+import { projectModal } from './projects/projectModalBox';
+import { newProject } from './projects/newProject';
 
 (function component() {
   const element = document.createElement('div');
@@ -12,9 +13,9 @@ import { projectModal } from './projects/projectModalBox'
   const itemContainer = document.getElementById('itemContainer');
   itemContainer.appendChild(itemModal());
   
-  const newItem = document.getElementById('newItemBtn');
+  const newItemBtn = document.getElementById('newItemBtn');
   const newItemModal = document.getElementById('newItemModal');
-  newItem.addEventListener('click', () => {
+  newItemBtn.addEventListener('click', () => {
     if (window.getComputedStyle(newItemModal).getPropertyValue('display') === 'none'){
       newItemModal.style.display = 'block';
     }
@@ -36,9 +37,9 @@ import { projectModal } from './projects/projectModalBox'
   const projectContainer = document.getElementById('projectContainer');
   projectContainer.appendChild(projectModal());
 
-  const newProject = document.getElementById('newProjectBtn');
+  const newProjectBtn = document.getElementById('newProjectBtn');
   const newProjectModal = document.getElementById('newProjectModal');
-  newProject.addEventListener('click', () => {
+  newProjectBtn.addEventListener('click', () => {
     if (window.getComputedStyle(newProjectModal).getPropertyValue('display') === 'none'){
       newProjectModal.style.display = 'block';
     }
@@ -46,7 +47,7 @@ import { projectModal } from './projects/projectModalBox'
 
   const projSubmit = document.getElementById('submitProject');
   projSubmit.addEventListener('click', () => {
-    console.log('true');
+    newProject();
   });
   
   const projClose = document.getElementById('projectCloseBtn');

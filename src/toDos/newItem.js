@@ -24,7 +24,7 @@ const newToDo = (() => {
         let title = document.getElementById('inputTitle').value;
         let description = document.getElementById('inputDescription').value;
         let dueDate = document.getElementById('inputDueDate').value;
-        let project = document.getElementById('inputProject').value;
+        let project = document.getElementById('selectProject').value;
         let priority = document.getElementById('inputPriority').value;
         const newItem = itemFactory(title, description, dueDate, project, priority);
         return newItem;
@@ -66,6 +66,7 @@ const newToDo = (() => {
         deleteBtn.setAttribute('class', 'itemDelete');
         deleteBtn.innerText = 'Delete';
         deleteBtn.addEventListener('click', () => deleteItem(i));
+
         completionContainer.append(obj[i][`newCompletion`]);
         titleContainer.append(obj[i][`newTitle`]);
         descriptionContainer.append(obj[i][`newDescription`]);
@@ -77,7 +78,6 @@ const newToDo = (() => {
             projectContainer, priorityContainer, deleteBtn);
         console.log(toDoList);
         return itemContainer; 
-        
     };
     
 

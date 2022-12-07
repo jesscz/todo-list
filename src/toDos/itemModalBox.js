@@ -44,7 +44,7 @@ const itemModal = () => {
     // projectLabel.for = 'inputProject';
     const project = document.createElement('select');
     // project.name = 'inputProject';
-    project.id = 'inputProject';
+    project.id = 'selectProject';
     const projectOption = document.createElement('option');
     projectOption.innerText = 'Default';
     project.appendChild(projectOption);
