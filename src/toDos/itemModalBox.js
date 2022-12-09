@@ -7,7 +7,7 @@ const itemModal = () => {
     const modalContent = document.createElement('div');
     modalContent.class = 'modalContent';
     modalContent.innerText = 'New To Do Item:';
-    
+     
     const form = document.createElement('form');
     form.name = 'myForm';
 

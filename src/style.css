@@ -64,10 +64,14 @@ button:hover{
     height: 2em;
     margin-top: 8px;
 }
-#newItemModal{
+#itemContainer{
     display: none;
+}
+#newItemModal{
+    display: flex;
     position: absolute;
     margin: 10px;
+
 }
 .error{
     color: red;

@@ -14,22 +14,21 @@ import { newProject } from './projects/newProject';
   itemContainer.appendChild(itemModal());
   
   const newItemBtn = document.getElementById('newItemBtn');
-  const newItemModal = document.getElementById('newItemModal');
   newItemBtn.addEventListener('click', () => {
-    if (window.getComputedStyle(newItemModal).getPropertyValue('display') === 'none'){
-      newItemModal.style.display = 'block';
+    if (window.getComputedStyle(itemContainer).getPropertyValue('display') === 'none'){
+      itemContainer.style.display = 'block';
     }
   });
 
   const itemSubmit = document.getElementById('submitTask');
   itemSubmit.addEventListener('click', () => {
-    // newItemModal.style.display = 'none';
+    // itemContainer.style.display = 'none';
     validateForm();
   });
   
   const itemClose = document.getElementById('itemCloseBtn');
   itemClose.addEventListener('click', () => {
-    newItemModal.style.display = 'none';
+    itemContainer.style.display = 'none';
   });
 
 
