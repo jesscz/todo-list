@@ -114,6 +114,17 @@ input{
 .itemPriority{
     grid-column: 4/5;
 }
+.itemEdit{
+    height: 18px;
+    width: 18px;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    align-self: end;
+    justify-self: end;
+    position: relative;
+    top: 3px;
+    right: 10px;
+}
 .itemDelete{
     grid-row: 3/4;
     grid-column: 4/5;
