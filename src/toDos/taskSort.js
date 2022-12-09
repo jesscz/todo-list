@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
-import { differenceInCalendarDays } from 'date-fns'
-import { newToDo } from './newItem.js'
+import { differenceInCalendarDays } from 'date-fns';
+import { newToDo } from './newItem.js';
 
 const taskSort = (x) => {
     const list = document.getElementById('list');
@@ -9,14 +9,14 @@ const taskSort = (x) => {
         list.innerHTML = '';
     }
     if (x == 'all'){
-        list.className = '';
+        // list.className = '';
         for(let i=0; (i<toDo.length); i++){
             list.append(newToDo.updatePage(toDo, i));
         }
     }
     else if (x == 'imp'){
-        list.className = '';
-        list.classList.add('imp');
+        // list.className = '';
+        // list.classList.add('imp');
         for(let i=0; (i<toDo.length); i++){
             if (toDo[i][`newPriority`] == 'Yes'){
                 list.append(newToDo.updatePage(toDo, i));
@@ -24,8 +24,8 @@ const taskSort = (x) => {
         }
     }
     else if (x == 'today'){
-        list.className = '';
-        list.classList.add('today');
+        // list.className = '';
+        // list.classList.add('today');
         let date = format(
             new Date(),
             'y-MM-dd');
@@ -36,8 +36,8 @@ const taskSort = (x) => {
         }
     }
     else if (x == 'week'){
-        list.className = '';
-        list.classList.add('week');
+        // list.className = '';
+        // list.classList.add('week');
         for(let i=0; (i<toDo.length); i++){
             let difference = differenceInCalendarDays(
                 new Date(toDo[i][`newDueDate`]),

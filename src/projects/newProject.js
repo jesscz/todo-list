@@ -1,3 +1,4 @@
+import { newToDo } from '../toDos/newItem.js';
 
 const newProject = (() => {
     
@@ -14,10 +15,31 @@ const newProject = (() => {
         //add to page visually
         const projectContainer = document.getElementById('projectContainer');
         const projectBtn = document.createElement('button');
+        projectBtn.setAttribute('class', 'projSort');
         projectBtn.innerText = getProject();
         projectContainer.appendChild(projectBtn);
+        
+        //add event listener to project btn
+        const list = document.getElementById('list');
+        let toDo = newToDo.getList();
+        const project = getProject();
+        projectBtn.addEventListener('click', () => {
+            list.className = '';
+            list.classList.add('proj');
+            if (list.innerHTML != null){
+                list.innerHTML = '';
+            }
+            for(let i=0; (i<toDo.length); i++){
+            if (toDo[i][`newProject`] === project){
+                list.append(newToDo.updatePage(toDo, i));
+            }
+        }
+        })
     }
 
+    function projSort(projectBtn){
+        
+    }
     return { addProject }
 })();
 
