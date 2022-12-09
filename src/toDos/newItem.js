@@ -37,14 +37,21 @@ const newToDo = (() => {
     function updatePage(obj, i){
         const itemContainer = document.createElement('div');
         itemContainer.setAttribute('class', 'toDoItems');
+
         const completionContainer = document.createElement('input');
         completionContainer.type = 'checkbox';
         completionContainer.setAttribute('class', 'checkbox');
         completionContainer.addEventListener('click', () => taskComplete(completionContainer, obj, i)); 
+        completionContainer.append(obj[i][`newCompletion`]);
+
         const titleContainer = document.createElement('p');
         titleContainer.setAttribute('class', 'itemTitle');
+        titleContainer.append(obj[i][`newTitle`]);
+
         const descriptionContainer = document.createElement('p');
         descriptionContainer.setAttribute('class', 'itemDescription');
+        descriptionContainer.append(obj[i][`newDescription`]);
+        
         const dueDateContainer = document.createElement('p');
         dueDateContainer.setAttribute('class', 'itemDueDate');
         if (obj[i][`newDueDate`] != ''){
@@ -56,24 +63,24 @@ const newToDo = (() => {
                 'E MMM do y');
             dueDateContainer.append(dueDate);
         }
+
         const projectContainer = document.createElement('p');
         projectContainer.setAttribute('class', 'itemProject');
+        if (obj[i][`newProject`] != 'Default'){
+            projectContainer.append(obj[i][`newProject`]);
+        }
+
         const priorityContainer = document.createElement('input');
         priorityContainer.type = 'image';
         priorityContainer.setAttribute('class', 'itemPriority');
         starClick(priorityContainer, obj, i);
+        priorityContainer.append(toDoList[i][`newPriority`]);
+
         const deleteBtn = document.createElement('button');
         deleteBtn.setAttribute('class', 'itemDelete');
         deleteBtn.innerText = 'Delete';
-        deleteBtn.addEventListener('click', () => deleteItem(i));
+        deleteBtn.addEventListener('click', () => deleteItem(i));       
 
-        completionContainer.append(obj[i][`newCompletion`]);
-        titleContainer.append(obj[i][`newTitle`]);
-        descriptionContainer.append(obj[i][`newDescription`]);
-        if (obj[i][`newProject`] != 'Default'){
-            projectContainer.append(obj[i][`newProject`]);
-        }
-        priorityContainer.append(toDoList[i][`newPriority`]);
         itemContainer.append(completionContainer, titleContainer, descriptionContainer, dueDateContainer,
             projectContainer, priorityContainer, deleteBtn);
         console.log(toDoList);
