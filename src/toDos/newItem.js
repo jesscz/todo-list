@@ -7,6 +7,7 @@ import { itemFactory } from './itemFactory';
 import { starClick } from './starClick';
 import { taskComplete } from './completion';
 import { deleteItem } from './deleteItem';
+import editImage from '../pictures/edit.svg';
 
 const newToDo = (() => {
     
@@ -76,13 +77,18 @@ const newToDo = (() => {
         starClick(priorityContainer, obj, i);
         priorityContainer.append(toDoList[i][`newPriority`]);
 
+        const editBtn = document.createElement('input');
+        editBtn.type = 'image';
+        editBtn.setAttribute('class', 'itemEdit');
+        editBtn.src = editImage;
+
         const deleteBtn = document.createElement('button');
         deleteBtn.setAttribute('class', 'itemDelete');
         deleteBtn.innerText = 'Delete';
         deleteBtn.addEventListener('click', () => deleteItem(i));       
 
         itemContainer.append(completionContainer, titleContainer, descriptionContainer, dueDateContainer,
-            projectContainer, priorityContainer, deleteBtn);
+            projectContainer, priorityContainer, editBtn, deleteBtn);
         console.log(toDoList);
         return itemContainer; 
     };
