@@ -9,6 +9,7 @@ const itemModal = () => {
     modalContent.innerText = 'New To Do Item:';
      
     const form = document.createElement('form');
+    form.id = 'myForm';
     form.name = 'myForm';
 
     const titleLabel = document.createElement('label');

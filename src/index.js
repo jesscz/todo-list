@@ -1,5 +1,6 @@
 import './style.css';
 import { validateForm } from './formValidation'
+import { clearForm } from './toDos/clearForm';
 import { pageLoad } from './pageLoad'
 import { itemModal } from './toDos/itemModalBox';
 import { projectModal } from './projects/projectModalBox';
@@ -16,20 +17,30 @@ import { newProject } from './projects/newProject';
   const newItemBtn = document.getElementById('newItemBtn');
   newItemBtn.addEventListener('click', () => {
     if (window.getComputedStyle(itemContainer).getPropertyValue('display') === 'none'){
-      itemContainer.style.display = 'block';
+      itemContainer.style.display = 'flex';
     }
   });
 
+  // function myFunction() {
+  //   document.getElementById("myForm").reset();
+  // }
+
   const itemSubmit = document.getElementById('submitTask');
   itemSubmit.addEventListener('click', () => {
-    // itemContainer.style.display = 'none';
     validateForm();
+    clearForm();
   });
   
   const itemClose = document.getElementById('itemCloseBtn');
   itemClose.addEventListener('click', () => {
     itemContainer.style.display = 'none';
   });
+
+  window.onclick = function(event) {
+    if (event.target == itemContainer) {
+      itemContainer.style.display = "none";
+    }
+  }
 
 
 
