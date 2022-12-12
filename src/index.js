@@ -1,7 +1,6 @@
 import './style.css';
-import { validateForm } from './formValidation'
-import { clearForm } from './toDos/clearForm';
-import { pageLoad } from './pageLoad'
+import { validateForm } from './formValidation';
+import { pageLoad } from './pageLoad';
 import { itemModal } from './toDos/itemModalBox';
 import { projectModal } from './projects/projectModalBox';
 import { newProject } from './projects/newProject';
@@ -21,14 +20,11 @@ import { newProject } from './projects/newProject';
     }
   });
 
-  // function myFunction() {
-  //   document.getElementById("myForm").reset();
-  // }
+  const title = document.getElementById('inputTitle');
 
   const itemSubmit = document.getElementById('submitTask');
   itemSubmit.addEventListener('click', () => {
     validateForm();
-    clearForm();
   });
   
   const itemClose = document.getElementById('itemCloseBtn');
