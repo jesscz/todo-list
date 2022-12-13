@@ -80,11 +80,55 @@ button:hover{
     display: grid;
     position: absolute;
     margin: auto;
-    padding: 10px;
     height: 60%;
     width: 60%;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid rgb(54, 54, 54);
+}
+#modalContent{
+    display: grid;
+    grid-template-rows: 50px auto;
+    grid-auto-columns: auto 50px;
+}
+#modalContent > p{
+    grid-row: 1/2;
+    margin: auto 20px;
+    font-size: 18px;
+}
+#itemCloseBtn{
+    grid-row: 1/2;
+    height: 30px;
+    width: 30px;
+    justify-self: center;
+    align-self: center;
+}
+#myForm{
+    grid-row: 2/3;
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20% 20% 20% 20%;
+    grid-gap: 20px;
+    margin: 0px 20px 10px;
+    font-size: 15px;
+}
+#myForm > label{
+    display: flex;
+    flex-direction: column;
+}
+label:first-child > span{ /* error under title */
+    position: relative;
+    top: -15px;
+}
+
+label:nth-child(2){ /* description */
+    grid-row: 2/5;
+}
+label:nth-child(2) > textarea{
+    height: 70%;
+}
+#myForm > label > *{
+    margin: 10px;
 }
 .error{
     color: red;
@@ -94,7 +138,14 @@ input{
     font-family: 'Arial', sans-serif;
 }
 #submitTask{
-    font-size: smaller;
+    font-size: 16px;
+    width: 60%; 
+    height: 80%;
+    justify-self: center;
+}
+#submitTask:hover{
+    background-color: rgb(230, 230, 230);
+    opacity: 100%;
 }
 .toDoItems{
     display: grid;
@@ -151,4 +202,3 @@ input{
     border-radius: 10%;
     font-size: 10px;
 }
-

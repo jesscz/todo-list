@@ -6,7 +6,7 @@ const validateForm = () =>{
     let list = document.getElementById('list');
     const title = document.getElementById('inputTitle');
     const titleLabel = title.parentElement;
-    const titleError = document.createElement('div');
+    const titleError = document.createElement('span');
     titleError.setAttribute('class', 'error');
     titleError.innerText = 'must have title';
     if (title.value != '') {

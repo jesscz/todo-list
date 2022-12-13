@@ -1,12 +1,15 @@
 import { format } from 'date-fns';
+import closeBtn from '../pictures/close.svg';
 
 const itemModal = () => {
     const element = document.createElement('div');
     element.id = 'newItemModal';
 
     const modalContent = document.createElement('div');
-    modalContent.class = 'modalContent';
-    modalContent.innerText = 'New To Do Item:';
+    modalContent.id = 'modalContent';
+    const modalTitle = document.createElement('p');
+    modalTitle.innerText = 'New To Do Item:';
+    modalContent.appendChild(modalTitle);
      
     const form = document.createElement('form');
     form.id = 'myForm';
@@ -24,8 +27,8 @@ const itemModal = () => {
     const descriptionLabel = document.createElement('label');
     descriptionLabel.innerText = 'Description:';
     // descriptionLabel.for = 'inputDescription';
-    const description = document.createElement('input');
-    description.type = 'text';
+    const description = document.createElement('textarea');
+    // description.type = 'text';
     // description.name = 'inputDescription';
     description.id = 'inputDescription';
     descriptionLabel.appendChild(description);
@@ -74,9 +77,11 @@ const itemModal = () => {
 
 
     
-    const modalCloseBtn = document.createElement('button');
+    const modalCloseBtn = document.createElement('input');
     modalCloseBtn.id = 'itemCloseBtn';
-    modalCloseBtn.innerText = 'Close';
+    modalCloseBtn.setAttribute('type', 'image');
+    modalCloseBtn.src = closeBtn;
+    // modalCloseBtn.innerText = 'Close';
     
     modalContent.append(form, modalCloseBtn);
     element.appendChild(modalContent);
