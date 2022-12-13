@@ -14,6 +14,7 @@ button:hover{
 #content{
     display: grid;
     grid-template-columns: 18vw 78vw;
+    grid-gap: 1vw;
     margin: 10px;
 }
 #mainTitle{
@@ -41,15 +42,33 @@ button:hover{
     font-size: large;
     display: flex;
     flex-direction: column;
+    padding: 2px;
+    padding-left: 10px;
 }
 #newProjectBtn{
     position: relative;
     left: 10px;
     text-align: left;
+    margin-bottom: 10px;
 }
 #newProjectModal{
     display: none;
+    margin: 10px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
 }
+#inputProject{
+    width: 80%;
+    grid-column: 1/5;
+}
+#newProjectModal > button{
+    justify-self: center;
+    align-self: center;
+}
+
+
+/* ---- right side of page ---- */
 
 #right{
     grid-column: 2/3;

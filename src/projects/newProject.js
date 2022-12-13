@@ -24,8 +24,6 @@ const newProject = (() => {
         let toDo = newToDo.getList();
         const project = getProject();
         projectBtn.addEventListener('click', () => {
-            list.className = '';
-            list.classList.add('proj');
             if (list.innerHTML != null){
                 list.innerHTML = '';
             }
@@ -35,12 +33,14 @@ const newProject = (() => {
             }
         }
         })
+
+        
     }
 
     function projSort(projectBtn){
         
     }
-    return { addProject }
+    return { getProject, addProject }
 })();
 
 export { newProject }

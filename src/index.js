@@ -20,7 +20,7 @@ import { newProject } from './projects/newProject';
     }
   });
 
-  const title = document.getElementById('inputTitle');
+  // const title = document.getElementById('inputTitle');
 
   const itemSubmit = document.getElementById('submitTask');
   itemSubmit.addEventListener('click', () => {
@@ -47,13 +47,15 @@ import { newProject } from './projects/newProject';
   const newProjectModal = document.getElementById('newProjectModal');
   newProjectBtn.addEventListener('click', () => {
     if (window.getComputedStyle(newProjectModal).getPropertyValue('display') === 'none'){
-      newProjectModal.style.display = 'block';
+      newProjectModal.style.display = 'grid';
     }
   });
 
   const projSubmit = document.getElementById('submitProject');
   projSubmit.addEventListener('click', () => {
-    newProject.addProject();
+    if (newProject.getProject() != ''){
+      newProject.addProject();
+    }
   });
   
   const projClose = document.getElementById('projectCloseBtn');
