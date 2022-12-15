@@ -12,13 +12,11 @@ const starClick = (star, toDoList, i) => {
         if (star.src == emptyStar){
             star.src = filledStar;
             toDoList[i]['newPriority'] = 'Yes';
-            console.log(toDoList);
         }
         else if (star.src == filledStar){
             star.src = emptyStar;
             toDoList[i]['newPriority'] = 'No';
-            console.log(toDoList);
-            }
+        }
     });
 }
 

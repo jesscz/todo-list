@@ -39,15 +39,16 @@ const newToDo = (() => {
         const itemContainer = document.createElement('div');
         itemContainer.setAttribute('class', 'toDoItems');
 
-        const completionContainer = document.createElement('input');
-        completionContainer.type = 'checkbox';
-        completionContainer.setAttribute('class', 'checkbox');
-        completionContainer.addEventListener('click', () => taskComplete(completionContainer, obj, i)); 
-        completionContainer.append(obj[i][`newCompletion`]);
-
         const titleContainer = document.createElement('p');
         titleContainer.setAttribute('class', 'itemTitle');
         titleContainer.append(obj[i][`newTitle`]);
+
+        const completionContainer = document.createElement('input');
+        completionContainer.type = 'checkbox';
+        completionContainer.setAttribute('class', 'checkbox');
+        // completionContainer.addEventListener('click', () => taskComplete(completionContainer, obj, i)); 
+        taskComplete(completionContainer, obj, i, titleContainer);
+        completionContainer.append(obj[i][`newCompletion`]);
 
         const descriptionContainer = document.createElement('p');
         descriptionContainer.setAttribute('class', 'itemDescription');

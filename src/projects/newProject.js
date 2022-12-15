@@ -31,7 +31,7 @@ const newProject = (() => {
         projectContainer.appendChild(newProject);
 
         //add delete button functionality
-        deleteProj(projectContainer, newProject, project, projectDelete);
+        deleteProj(projectContainer, newProject, projectDelete);
     }
 
     function projSort(projectBtn){
