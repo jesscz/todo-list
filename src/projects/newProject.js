@@ -1,4 +1,5 @@
 import { newToDo } from '../toDos/newItem.js';
+import closeBtn from '../pictures/close.svg';
 
 const newProject = (() => {
     
@@ -14,11 +15,23 @@ const newProject = (() => {
         projectSelect.appendChild(projectOption);
         //add to page visually
         const projectContainer = document.getElementById('projectContainer');
-        const projectBtn = document.createElement('button');
-        projectBtn.setAttribute('class', 'projSort');
-        projectBtn.innerText = getProject();
-        projectContainer.appendChild(projectBtn);
-        
+        const newProject = document.createElement('div');
+        const project = document.createElement('button');
+        project.setAttribute('class', 'projSort');
+        project.innerText = getProject();
+        projSort(project);
+
+        //add delete button to project
+        const projectDelete = document.createElement('input');
+        projectDelete.setAttribute('type', 'image');
+        projectDelete.src = closeBtn;
+        projectDelete.setAttribute('class', 'projectDelete');
+        newProject.append(project, projectDelete);
+
+        projectContainer.appendChild(newProject);
+    }
+
+    function projSort(projectBtn){
         //add event listener to project btn
         const list = document.getElementById('list');
         let toDo = newToDo.getList();
@@ -28,18 +41,13 @@ const newProject = (() => {
                 list.innerHTML = '';
             }
             for(let i=0; (i<toDo.length); i++){
-            if (toDo[i][`newProject`] === project){
+                if (toDo[i][`newProject`] === project){
                 list.append(newToDo.updatePage(toDo, i));
+                }
             }
-        }
         })
-
-        
     }
 
-    function projSort(projectBtn){
-        
-    }
     return { getProject, addProject }
 })();
 
