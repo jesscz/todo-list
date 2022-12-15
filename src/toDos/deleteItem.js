@@ -14,6 +14,9 @@ const deleteItem = (i) => {
     // console.log(list.children[i]);
     // console.log(list.classList.value);
     list.innerHTML = '';
+    function get2ndClass(element) {
+        return (element && element.classList.length>1) ? element.classList[1] : null;
+    }
     if (list.classList.value == ''){
         for(let i=0; (i<toDo.length); i++){
             list.append(newToDo.updatePage(toDo, i));
@@ -41,16 +44,22 @@ const deleteItem = (i) => {
             let difference = differenceInCalendarDays(
                 new Date(toDo[i][`newDueDate`]),
                 new Date()
-              )
-            console.log (difference);
+            )
             if (difference < 7){
                 list.append(newToDo.updatePage(toDo, i));
             }
         }
     }
-//    let n = i-1;
-    // list.removeChild(list.children[i]);
-    // toDo = newToDo.getList();
+    else if (list.classList.contains('proj')){
+        let projName = get2ndClass(list);
+        for(let i=0; (i<toDo.length); i++){
+            if (toDo[i][`newProject`] == projName){
+                list.append(newToDo.updatePage(toDo, i));
+            }
+        }
+
+    }
+
 }
 
 export { deleteItem }

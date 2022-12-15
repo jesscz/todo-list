@@ -85,7 +85,8 @@ const newToDo = (() => {
         const deleteBtn = document.createElement('button');
         deleteBtn.setAttribute('class', 'itemDelete');
         deleteBtn.innerText = 'Delete';
-        deleteBtn.addEventListener('click', () => deleteItem(i));       
+        deleteBtn.addEventListener('click', () => deleteItem(i));    
+        
 
         itemContainer.append(completionContainer, titleContainer, descriptionContainer, dueDateContainer,
             projectContainer, priorityContainer, editBtn, deleteBtn);

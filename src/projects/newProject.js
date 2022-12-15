@@ -1,5 +1,6 @@
 import { newToDo } from '../toDos/newItem.js';
 import closeBtn from '../pictures/close.svg';
+import { taskSort } from '../toDos/taskSort.js';
 
 const newProject = (() => {
     
@@ -20,6 +21,8 @@ const newProject = (() => {
         project.setAttribute('class', 'projSort');
         project.innerText = getProject();
         projSort(project);
+     
+        
 
         //add delete button to project
         const projectDelete = document.createElement('input');
@@ -33,6 +36,7 @@ const newProject = (() => {
 
     function projSort(projectBtn){
         //add event listener to project btn
+
         const list = document.getElementById('list');
         let toDo = newToDo.getList();
         const project = getProject();
@@ -40,6 +44,10 @@ const newProject = (() => {
             if (list.innerHTML != null){
                 list.innerHTML = '';
             }
+            list.className = '';
+            list.classList.add('proj');
+            list.classList.add(project);
+            console.log(list.classList.value)
             for(let i=0; (i<toDo.length); i++){
                 if (toDo[i][`newProject`] === project){
                 list.append(newToDo.updatePage(toDo, i));
