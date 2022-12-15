@@ -57,7 +57,6 @@ const deleteItem = (i) => {
                 list.append(newToDo.updatePage(toDo, i));
             }
         }
-
     }
 
 }
