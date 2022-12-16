@@ -31,7 +31,7 @@ const newProject = (() => {
         projectContainer.appendChild(newProject);
 
         //add delete button functionality
-        deleteProj(projectContainer, newProject, projectDelete);
+        deleteProj(projectContainer, newProject, projectDelete, projectSelect, projectOption);
     }
 
     function projSort(projectBtn){
@@ -55,11 +55,13 @@ const newProject = (() => {
         })
     }
     
-    function deleteProj(outside, container, deleteBtn){
+    function deleteProj(outside, container, deleteBtn, dropdown, option){
         deleteBtn.addEventListener('click', () => {
+            //delete project on page
             outside.removeChild(container);
+            //delete project option in dropdown
+            dropdown.removeChild(option);
         })
-
     }
 
     return { getProject, addProject }
