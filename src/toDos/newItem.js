@@ -78,10 +78,10 @@ const newToDo = (() => {
         starClick(priorityContainer, obj, i);
         priorityContainer.append(toDoList[i][`newPriority`]);
 
-        const editBtn = document.createElement('input');
-        editBtn.type = 'image';
-        editBtn.setAttribute('class', 'itemEdit');
-        editBtn.src = editImage;
+        // const editBtn = document.createElement('input');
+        // editBtn.type = 'image';
+        // editBtn.setAttribute('class', 'itemEdit');
+        // editBtn.src = editImage;
 
         const deleteBtn = document.createElement('button');
         deleteBtn.setAttribute('class', 'itemDelete');
@@ -90,7 +90,7 @@ const newToDo = (() => {
         
 
         itemContainer.append(completionContainer, titleContainer, descriptionContainer, dueDateContainer,
-            projectContainer, priorityContainer, editBtn, deleteBtn);
+            projectContainer, priorityContainer, deleteBtn);
         console.log(toDoList);
         return itemContainer; 
     };
